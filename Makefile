@@ -4,7 +4,7 @@ latex_cmd = pdflatex
 
 references = ../bibtex/consolidated_bibtex_file.bib
 
-all:: $(target).pdf
+all: $(target).pdf
 
 $(target).bbl: $(references) $(target).tex
 
@@ -29,11 +29,14 @@ vi:
 clean::
 	rm -fv *.log *.blg *.aux *.out *.bbl *.bak
 
-allclean:: clean
+allclean: clean
 	rm -rf $(target).pdf
 
-spell::
+spell:
 	aspell --lang=en -t check $(target).tex
+
+wc:
+	detex $(target).tex | wc -w
 
 notes:
 	(cd ~/thesis/github/notes.new && make notes)
@@ -48,6 +51,8 @@ changes:
 	git diff
 
 commit:
-	@echo "This is not on GitHub."
-
+	git add *
+	git commit
+	git pull
+	git push
 
