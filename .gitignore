@@ -5,7 +5,7 @@
 *.bbl
 *.aux
 *.out
-article.pdf
-article.tex.bak
+JED_whitepaper.pdf
+JED_whitepaper.tex.bak
 common.mk
 consolidated_bibtex_file.bib

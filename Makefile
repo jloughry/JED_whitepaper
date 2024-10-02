@@ -1,4 +1,4 @@
-target = article
+target = JED_whitepaper
 
 latex_cmd = pdflatex
 
